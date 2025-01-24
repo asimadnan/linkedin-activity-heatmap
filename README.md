@@ -1,28 +1,73 @@
-# Linkedin Activity Heatmap
-
-This repo will guide you how you can create activity heatmap of your linkedin profile.
+# LinkedIn Activity Heatmap Visualizer
 
 ![alt text](images/asim-heatmap.png "Asim's Activty Heatmap")
-![alt text](images/meri-heatmap.png "Asim's Activty Heatmap")
+![alt text](images/meri-heatmap.png "Meri's Activty Heatmap")
 
-## The Data
-To create this heatmap we require post data of the user. it would be quite easy if there was a native API available by linkedin which we could use to fetch posts of any user. 
+A simple tool to create GitHub-style activity calendars from LinkedIn post history.
 
-So what do we do??
+## Getting Your Data
 
-we can scrape, but from what i have read online seems like its risky to scrape linkedin, firstly its prohibited by them, secondly i have heard them banning account that they detect were scrapping.
+### Available Methods
+1. **Official LinkedIn API** (Recommended)  
+   - Requires developer access
+   - Complex Auth stuff
+   
+2. **Web Scraping**  
+   - High risk of account restriction
+   - Technically complex to implement
 
-I have seen some paid APIs available that provide scraping servics, and from what i understand they probably use dummy account to run scraping and keep creating new ones if they get banned.
+3. **Kleo Extension Workaround**  
+   - Method used in this project
+   - Browser extension that surfaces post data
+   - Detailed guide: [**Get LinkedIn Posts Guide** (get-linkedin-posts.md)
 
-So scrapping is out of question so how do we get all of the post data??
+4. **Manual Export**  
+   - Export your data via LinkedIn's "Download Your Data" feature
+   - Limited to your own profile
 
-I found an intresting way to fetch this data, using Kleo. If you have not used Kleo its a very useful extension, that shows you top post of any linkedin profile, it mainly works for famous creators, but you can see all posts of any profile, sort them by likes, comments etc.
+## ⚠️ Important Disclaimer
+**Use the Kleo method at your own risk:**  
+- This approach may violate Kleo's terms of service
+- No guarantee of data accuracy/completeness
+- Your LinkedIn account security is your responsibility
 
-they show these posts in sidebar on top on linkedin page, when i saw that i thought, they must be storing this data on there server.
+```plaintext
+Alternative safe methods recommended:
+1. Use LinkedIn's official data export
+2. Work with approved API partners
+```
 
-I inspected the network calls that kleo makes and voila found something
+## Requirements
+```bash
+Python 3.8+ with:
+- pandas
+- plotly
+- jupyter
+- calmap
+```
+## Quick Start
 
-so long story short i bypass kleo's call to its server to fetch the data.
+Get your data using the guide
 
-then save it as json and create my heatmap.
+Save data as posts.json in project data folder
 
+Run Jupyter notebook
+
+## Features
+- Hover-to-see-date functionality
+
+- Customizable date ranges
+
+- Multiple color schemes
+
+
+## Ethical Note
+This tool is intended for:
+
+- Personal education
+
+- Data visualization practice
+
+- Understanding activity patterns
+
+Not recommended for commercial use or bulk data collection.
